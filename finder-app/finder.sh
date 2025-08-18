@@ -1,3 +1,4 @@
+#!/bin/sh
 ArgDirectoryOk=0
 ArgCountOk=0
 
