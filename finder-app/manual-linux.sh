@@ -127,10 +127,15 @@ sudo mknod -m 600 dev/console c 5 1
 ls -l dev
 
 # Clean and build the writer utility
-cd $home_dir
-make clean 
+#cd $home_dir
+echo "about to cd to ${FINDER_APP_DIR}"
+cd ${FINDER_APP_DIR}
+echo "current directory is: $(pwd)"
+make clean
+#${CROSS_COMPILE}gcc -o ${OUTDIR}/rootfs/home/writer writer.c
 make CROSS_COMPILE=${CROSS_COMPILE}
-ls writer* -la
+ls ${OUTDIR}/rootfs/home -la
+
 
 # Copy the finder related scripts and executables to the /home directory
 # on the target rootfs
